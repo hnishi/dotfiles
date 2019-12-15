@@ -2,11 +2,22 @@
 
 I aim to make my dotfiles simple, minimal, and dependent only on bash.
 
+## Requirements
+
+- bash
+- curl
+
 ## How to install
 
 ```
+curl -L raw.githubusercontent.com/hnishi/dotfiles/master/scripts/download.sh | bash
+```
+
+or
+
+```
 git clone https://github.com/hnishi/dotfiles.git
-cd dotfiles
+cd dotfiles/scripts
 bash install.sh
 ```
 
