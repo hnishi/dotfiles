@@ -1,5 +1,15 @@
 # hnishi's dotfiles
 
+I aim to make my dotfiles simple, minimal, and dependent on only bash.
+
+## How to install
+
+```
+git clone https://github.com/hnishi/dotfiles.git
+cd dotfiles
+bash install.sh
+```
+
 ## References
 
 My "dotfiles" was inspired by ...
