@@ -1,6 +1,6 @@
 # hnishi's dotfiles
 
-I aim to make my dotfiles simple, minimal, and dependent on only bash.
+I aim to make my dotfiles simple, minimal, and dependent only on bash.
 
 ## How to install
 
