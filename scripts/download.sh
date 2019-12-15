@@ -175,7 +175,7 @@ dotfiles_download() {
 # ==> downloading
 #
 # Priority: git > curl > wget
-#dotfiles_download 
+dotfiles_download 
 
 
 # Install the dotfiles
