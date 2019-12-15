@@ -1,6 +1,6 @@
 # hnishi's dotfiles
 
-## Reference
+## References
 
 My "dotfiles" was inspired by ...
 
