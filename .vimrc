@@ -116,7 +116,10 @@ set formatexpr=autofmt#japanese#formatexpr()  " kaoriya版では設定済み
 let autofmt_allow_over_tw=1                   " 全角文字がぶら下がりで1カラムはみ出すのを許可
 " command gq to format by autofmt
 " 以下のいずれかで、はみ出た部分の色を変えるのもよい。
-" syn match Error /\%>79v.*/
+syn match Error /\%>79v.*/
 set cc=+1
+" ファイル形式
+" 文字コードは UTF-8
+" 改行文字は UNIX 形式(\n)
 set modifiable
 set fileencoding=utf-8 fileformat=unix
