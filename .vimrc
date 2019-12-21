@@ -118,4 +118,5 @@ let autofmt_allow_over_tw=1                   " 全角文字がぶら下がり�
 " 以下のいずれかで、はみ出た部分の色を変えるのもよい。
 " syn match Error /\%>79v.*/
 set cc=+1
+set modifiable
 set fileencoding=utf-8 fileformat=unix
