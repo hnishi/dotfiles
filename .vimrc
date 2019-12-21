@@ -93,3 +93,14 @@ if has("autocmd")
   autocmd FileType sass        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
 endif
+
+" for translate vimdoc
+" https://github.com/vim-jp/vimdoc-ja-working/wiki/Guide
+hi Ignore ctermfg=red
+" autofmtの設定例
+set formatexpr=autofmt#japanese#formatexpr()  " kaoriya版では設定済み
+let autofmt_allow_over_tw=1                   " 全角文字がぶら下がりで1カラムはみ出すのを許可
+" 以下のいずれかで、はみ出た部分の色を変えるのもよい。
+" syn match Error /\%>79v.*/
+set cc=+1
+set fileencoding=utf-8 fileformat=unix
