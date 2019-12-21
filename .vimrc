@@ -94,12 +94,27 @@ if has("autocmd")
   autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
 endif
 
+" vim-plug
+" https://github.com/junegunn/vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'vim/killersheep'
+Plug 'vim-jp/autofmt'
+call plug#end()
+" do :PlugInstall to install plugins
+
 " for translate vimdoc
 " https://github.com/vim-jp/vimdoc-ja-working/wiki/Guide
 hi Ignore ctermfg=red
 " autofmtの設定例
 set formatexpr=autofmt#japanese#formatexpr()  " kaoriya版では設定済み
 let autofmt_allow_over_tw=1                   " 全角文字がぶら下がりで1カラムはみ出すのを許可
+" command gq to format by autofmt
 " 以下のいずれかで、はみ出た部分の色を変えるのもよい。
 " syn match Error /\%>79v.*/
 set cc=+1
