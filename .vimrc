@@ -103,8 +103,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
-Plug 'vim/killersheep'
+" Plug 'vim/killersheep'
 Plug 'vim-jp/autofmt'
+" Plug 'yasukotelin/shirotelin'
 call plug#end()
 " do :PlugInstall to install plugins
 
