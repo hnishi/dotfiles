@@ -7,6 +7,14 @@ termcapinfo xterm* ti@:tenwait 0
 # いきなりScreen死んでもプロセスを残す
 autodetach on
 
+# show status bar
+startup_message off
+hardstatus alwayslastline
+shelltitle 'bash'
+
+hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
+
+
 #Color
 #defbce on@
 
