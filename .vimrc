@@ -124,3 +124,6 @@ set cc=+1
 " 改行文字は UNIX 形式(\n)
 set modifiable
 set fileencoding=utf-8 fileformat=unix
+
+" ファイル保存時に、不要な行末スペースを自動で削除
+autocmd BufWritePre * :%s/\s\+$//ge

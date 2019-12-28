@@ -11,7 +11,6 @@ autodetach on
 startup_message off
 hardstatus alwayslastline
 shelltitle 'bash'
-
 hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
 
 
@@ -22,7 +21,7 @@ hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= 
 #altscreen off
 
 #ログファイルの書式を定義
-#logfile "screen-%Y%m%d-%n.log"
+logfile "/tmp/screen-%Y%m%d-%n.log"
 #deflog flush secs #ログファイルバッファをファイルシステムにフラッシュするまでの待ち時間
 #deflog on #automatic log --> on
 
