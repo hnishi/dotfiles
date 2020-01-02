@@ -95,11 +95,6 @@ fi
 #PS1='\n\u@\h:\w\n\$ '
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
 
-# 個々の環境のbash設定を読み込む
-if [ -e "${HOME}/.bashrc_local" ]; then
-  source "${HOME}/.bashrc_local"
-fi
-
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
 #if [[ "$OSTYPE" == "linux-gnu" ]]; then
