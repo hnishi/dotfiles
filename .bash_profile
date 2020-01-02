@@ -1,3 +1,5 @@
+#set -xv
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
   # include .bashrc if it exists
@@ -31,4 +33,7 @@ elif [[ $platform == 'freebsd' ]]; then
 fi
 
 export PATH=$HOME/.local/bin:$PATH
+
+# completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
