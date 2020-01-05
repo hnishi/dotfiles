@@ -1,0 +1,7 @@
+# To enable this file, do the following command
+# git config --global core.excludesfile ~/.gitignore_global
+*~
+.DS_Store
+*.swp
+tags
+.tags
