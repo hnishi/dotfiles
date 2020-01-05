@@ -128,3 +128,8 @@ set fileencoding=utf-8 fileformat=unix
 " ファイル保存時に、不要な行末スペースを自動で削除
 autocmd BufWritePre * :%s/\s\+$//ge
 
+" Smart tag jump (ctags -R)
+" https://qiita.com/tutu/items/fbc4023ebc3004964e86
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+
