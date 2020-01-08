@@ -3,3 +3,7 @@
 # git completion
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 
+# enable color
+export CLICOLOR=1
+export LSCOLORS=GxBxCxDxexegedabagaced
+
