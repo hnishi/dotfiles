@@ -5,5 +5,5 @@ source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bas
 
 # enable color
 export CLICOLOR=1
-export LSCOLORS=GxBxCxDxexegedabagaced
+#export LSCOLORS=GxBxCxDxexegedabagaced
 
