@@ -8,11 +8,6 @@ if [ -n "$BASH_VERSION" ]; then
   fi
 fi
 
-# 個々の環境のbash設定を読み込む
-if [ -e "${HOME}/.bashrc_local" ]; then
-  source "${HOME}/.bashrc_local"
-fi
-
 # OS ごとの設定を読み込む
 platform='unknown'
 unamestr=`uname`
