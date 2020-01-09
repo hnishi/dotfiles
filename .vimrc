@@ -138,3 +138,9 @@ inoremap <C-]> <ESC>g<C-]>
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
+" 括弧の補完
+" https://babie.hatenablog.com/entry/20110130/1296348203
+inoremap ( ()<ESC>i
+inoremap { {}<ESC>i
+inoremap [ []<ESC>i
+
