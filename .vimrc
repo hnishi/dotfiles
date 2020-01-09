@@ -134,6 +134,7 @@ nnoremap <C-]> g<C-]>
 inoremap <C-]> <ESC>g<C-]>
 
 " Smart tag jump (ctags -R)
+" Recommended: https://github.com/universal-ctags/ctags
 " https://qiita.com/tutu/items/fbc4023ebc3004964e86
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
