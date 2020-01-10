@@ -3,10 +3,14 @@
 
 syntax on
 "set number
-set hlsearch   "highlight searched strings
 set incsearch   "real-time search
 set smartcase   "Large letters will not be ignored but small letters ignored.
 "set ignorecase
+
+" enable highlight
+" to see colors: `:so $VIMRUNTIME/syntax/colortest.vim`
+set hlsearch   "highlight searched strings
+hi Search ctermbg=grey
 
 set laststatus=2
 "最下ウィンドウにいつステータス行が表示されるかを設定する。
@@ -148,4 +152,5 @@ inoremap { {}<ESC>i
 inoremap [ []<ESC>i
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
+inoremap ` ``<ESC>i
 
