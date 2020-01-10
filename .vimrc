@@ -105,6 +105,7 @@ endif
 call plug#begin()
 " Plug 'vim/killersheep'
 Plug 'vim-jp/autofmt'
+Plug 'skanehira/preview-markdown.vim'
 " Plug 'yasukotelin/shirotelin'
 call plug#end()
 " do :PlugInstall to install plugins
@@ -133,9 +134,10 @@ autocmd BufWritePre * :%s/\s\+$//ge
 nnoremap <C-]> g<C-]>
 inoremap <C-]> <ESC>g<C-]>
 
-" Smart tag jump (ctags -R)
+" Tag jump (ctags -R -f .tags)
 " Recommended: https://github.com/universal-ctags/ctags
 " https://qiita.com/tutu/items/fbc4023ebc3004964e86
+set tags=.tags;~ " search .tags up to $HOME
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 
