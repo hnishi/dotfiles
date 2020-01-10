@@ -143,4 +143,6 @@ nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 inoremap ( ()<ESC>i
 inoremap { {}<ESC>i
 inoremap [ []<ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
 
