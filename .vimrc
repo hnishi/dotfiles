@@ -158,38 +158,12 @@ set number
 " 相対行番号表示
 set relativenumber
 
+" key map for set nopaste <--> set paste
+" https://stackoverflow.com/questions/13967356/vimrc-addition-to-toggle-set-paste
+set pastetoggle=<F7>
+
 " copy mode for mouse
 " http://saihoooooooo.hatenablog.com/entry/2013/07/09/112527
-nnoremap <silent><F8> :<C-u>call <SID>CopipeTerm()<CR>
-function! s:CopipeTerm()
-    if !exists('b:copipe_term_save')
-        " 値が保存されていなければ保存後に各オプションをコピペ用に設定
-        let b:copipe_term_save = {
-        \     'number': &l:number,
-        \     'relativenumber': &relativenumber,
-        \     'foldcolumn': &foldcolumn,
-        \     'wrap': &wrap,
-        \     'list': &list,
-        \     'showbreak': &showbreak
-        \ }
-        setlocal foldcolumn=0     " 折りたたみ情報表示幅
-        setlocal nonumber         " 行番号
-        setlocal norelativenumber " 相対行番号
-        setlocal wrap             " 折り返し
-        setlocal nolist           " 行末やタブ文字の可視化
-        set showbreak=            " 折り返し行の先頭に表示されるマーク（こいつだけグローバル設定しかない）
-    else
-        " 保存されている場合は復元
-        let &l:foldcolumn = b:copipe_term_save['foldcolumn']
-        let &l:number = b:copipe_term_save['number']
-        let &l:relativenumber = b:copipe_term_save['relativenumber']
-        let &l:wrap = b:copipe_term_save['wrap']
-        let &l:list = b:copipe_term_save['list']
-        let &showbreak = b:copipe_term_save['showbreak']
-        " 削除
-        unlet b:copipe_term_save
-    endif
-endfunction
 nnoremap <silent><F8> :<C-u>call <SID>CopipeTerm()<CR>
 function! s:CopipeTerm()
     if !exists('b:copipe_term_save')
