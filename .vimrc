@@ -194,3 +194,7 @@ function! s:CopipeTerm()
         unlet b:copipe_term_save
     endif
 endfunction
+
+" completion by tab in insert-mode
+inoremap <Tab> <C-n>
+
