@@ -102,8 +102,8 @@ endif
 
 call plug#begin()
 " Plug 'vim/killersheep'
-Plug 'vim-jp/autofmt'
-Plug 'skanehira/preview-markdown.vim'
+" Plug 'vim-jp/autofmt'
+" Plug 'skanehira/preview-markdown.vim'
 " Plug 'yasukotelin/shirotelin'
 call plug#end()
 " do :PlugInstall to install plugins
