@@ -121,3 +121,9 @@ if [ -e "${HOME}/.bashrc_local" ]; then
   source "${HOME}/.bashrc_local"
 fi
 
+# 毎回シェルで Screen を起動する
+# https://wiki.archlinux.jp/index.php/GNU_Screen
+if [[ -z "$STY" ]]; then
+   screen -xRR default_session
+fi
+

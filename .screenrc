@@ -10,8 +10,15 @@ autodetach on
 # show status bar
 startup_message off
 hardstatus alwayslastline
-shelltitle 'bash'
-hardstatus string '%{gk}[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g} ]%{W}'
+#shelltitle 'bash'
+shelltitle "$ |bash"
+# to see session name
+# https://stackoverflow.com/questions/2479683/how-do-i-display-the-current-session-name-or-sockname-of-a-screen-session-in
+hardstatus string '%{gk}%S[%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}][%{d}%l%{g}][ %{= w}%Y/%m/%d %0C:%s%a%{g}]%{W}'
+#hardstatus string "%S"
+#hardstatus string "%{STY#*.}"
+#screen
+#screen $SHELL -c 'screen -X caption always "$STY"'
 
 
 #Color
