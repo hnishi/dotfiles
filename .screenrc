@@ -7,6 +7,13 @@ termcapinfo xterm* ti@:tenwait 0
 # いきなりScreen死んでもプロセスを残す
 autodetach on
 
+# clear(1) after detach in GNU screen
+# https://unix.stackexchange.com/questions/21707/clear1-after-detach-in-gnu-screen
+# If you prefer screen to use the alternate screen of the xterm-like terminal, you could add to your .screenrc file
+termcapinfo xterm*|rxvt*  te=\E[?1049l:ti=\E[?1049h:
+# If you would rather not use the alternate screen, you could redefine te to clear the screen:
+#termcapinfo xterm*|rxvt*  te=\E[H\E[2J:ti=\E[H\E[2J:
+
 # show status bar
 startup_message off
 hardstatus alwayslastline
