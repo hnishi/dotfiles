@@ -31,3 +31,4 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias vi=vim
 alias dirs="dirs -v"
+

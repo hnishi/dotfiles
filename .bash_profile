@@ -27,6 +27,7 @@ elif [[ $platform == 'freebsd' ]]; then
   source "${HOME}/.bashrc_mac"
 fi
 
+# TODO: .bash_profile に export を書くと、ログインシェル以外を開くと、ちゃんとPATHが設定されないので、.bashrcに移行させる
 export PATH=$HOME/.local/bin:$PATH
 
 # completion
@@ -40,4 +41,13 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # TODO: add PS1 here
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
