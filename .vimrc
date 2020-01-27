@@ -101,10 +101,16 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin()
+" Shooting game ! made by Bram at vim 8.2
 " Plug 'vim/killersheep'
+" For translation of vim documents
 " Plug 'vim-jp/autofmt'
+" Preview of markdown
 " Plug 'skanehira/preview-markdown.vim'
+" Color scheme for light-theme
 " Plug 'yasukotelin/shirotelin'
+" Completion of parentheses
+" Plug 'mattn/vim-lexiv'
 call plug#end()
 " do :PlugInstall to install plugins
 
