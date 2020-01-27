@@ -34,6 +34,41 @@ shopt -s globstar
 # Set environment varibales
 export PATH=$HOME/.local/bin:$PATH
 
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+#if [ -f /path/to/git-completion.bash ]; then
+#    source /path/to/git-completion.bash
+#fi
+#if [ -f /path/to/git-prompt.sh ]; then
+#    source /path/to/git-prompt.sh
+#fi
+
+# add されていない変更の存在を「＊」で示す
+# commit されていない変更の存在を「＋」で示す
+GIT_PS1_SHOWDIRTYSTATE=true
+# add されていない新規ファイルの存在を「％」で示す
+GIT_PS1_SHOWUNTRACKEDFILES=true
+# stash がある場合は「＄」で示す
+GIT_PS1_SHOWSTASHSTATE=true
+# upstream と同期している場合は「＝」で示す
+# upstream より進んでいる場合は「＞」で示す
+# upstream より遅れている場合は「＜」で示す
+GIT_PS1_SHOWUPSTREAM=auto
+
+export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \n\$ '
+
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
 #if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -83,41 +118,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-# completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-#if [ -f /path/to/git-completion.bash ]; then
-#    source /path/to/git-completion.bash
-#fi
-#if [ -f /path/to/git-prompt.sh ]; then
-#    source /path/to/git-prompt.sh
-#fi
-
-# add されていない変更の存在を「＊」で示す
-# commit されていない変更の存在を「＋」で示す
-GIT_PS1_SHOWDIRTYSTATE=true
-# add されていない新規ファイルの存在を「％」で示す
-GIT_PS1_SHOWUNTRACKEDFILES=true
-# stash がある場合は「＄」で示す
-GIT_PS1_SHOWSTASHSTATE=true
-# upstream と同期している場合は「＝」で示す
-# upstream より進んでいる場合は「＞」で示す
-# upstream より遅れている場合は「＜」で示す
-GIT_PS1_SHOWUPSTREAM=auto
-
-export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \n\$ '
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
