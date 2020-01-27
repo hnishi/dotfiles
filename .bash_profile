@@ -8,3 +8,9 @@ if [ -n "$BASH_VERSION" ]; then
   fi
 fi
 
+# 毎回シェルで Screen を起動する
+# https://wiki.archlinux.jp/index.php/GNU_Screen
+if [[ -z "$STY" ]]; then
+   screen -xRR z_default_session
+fi
+

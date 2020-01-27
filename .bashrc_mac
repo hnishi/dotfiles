@@ -2,6 +2,8 @@
 
 # git completion
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+# git prompt
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 
 # enable color
 #export CLICOLOR=1

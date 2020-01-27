@@ -1,6 +1,7 @@
+# hnishi's .bashrc
+#
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
 # If not running interactively, don't do anything
 case $- in
@@ -110,12 +111,6 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 # 個々の環境のbash設定を読み込む
 if [ -e "${HOME}/.bashrc_local" ]; then
   source "${HOME}/.bashrc_local"
-fi
-
-# 毎回シェルで Screen を起動する
-# https://wiki.archlinux.jp/index.php/GNU_Screen
-if [[ -z "$STY" ]]; then
-   screen -xRR z_default_session
 fi
 
 # OS ごとの設定を読み込む
