@@ -23,7 +23,10 @@ set wildmenu
 set ruler
 " 対応する括弧を強調表示
 set showmatch
-"set cursorline " Underline
+" Highlight the current column
+"set cursorcolumn
+" Highlight the current line
+"set cursorline
 set encoding=utf-8
 
 colorscheme peachpuff
@@ -111,8 +114,17 @@ call plug#begin()
 " Plug 'yasukotelin/shirotelin'
 " Completion of parentheses
 " Plug 'mattn/vim-lexiv'
+" Gist client for vim
+Plug 'mattn/webapi-vim'
+Plug 'mattn/vim-gist'
 call plug#end()
-" do :PlugInstall to install plugins
+" `:PlugInstall` to install plugins
+
+" Settings for vim-gist
+" If you want to detect filetype from the filename:
+let g:gist_detect_filetype = 1
+" If you want to open browser after the post:
+let g:gist_open_browser_after_post = 1
 
 " for translate vimdoc
 " https://github.com/vim-jp/vimdoc-ja-working/wiki/Guide
