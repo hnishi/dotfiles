@@ -221,5 +221,5 @@ let mapleader = "\<Space>"
 
 " Standard MRU combined with filter
 " https://qiita.com/todashuta/items/1362654c6276e5b69abc
-nnoremap <Leader>e  :<C-u>/ oldfiles<Home>browse filter /
+nnoremap <Leader>f  :<C-u>/ oldfiles<Home>browse filter /
 
