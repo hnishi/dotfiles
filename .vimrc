@@ -216,3 +216,10 @@ endfunction
 " completion by tab in insert-mode
 inoremap <Tab> <C-n>
 
+" Set space key as Leader key
+let mapleader = "\<Space>"
+
+" Standard MRU combined with filter
+" https://qiita.com/todashuta/items/1362654c6276e5b69abc
+nnoremap <Leader>e  :<C-u>/ oldfiles<Home>browse filter /
+
