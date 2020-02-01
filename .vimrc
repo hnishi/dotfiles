@@ -213,13 +213,31 @@ function! s:CopipeTerm()
     endif
 endfunction
 
-" completion by tab in insert-mode
-inoremap <Tab> <C-n>
+
+" -----------------------------------------------------
+" Key mapping
+" -----------------------------------------------------
 
 " Set space key as Leader key
 let mapleader = "\<Space>"
 
 " Standard MRU combined with filter
 " https://qiita.com/todashuta/items/1362654c6276e5b69abc
-nnoremap <Leader>f  :<C-u>/ oldfiles<Home>browse filter /
+nnoremap <Leader>f :<C-u>/ oldfiles<Home>browse filter /
 
+" completion by tab in insert-mode
+inoremap <Tab> <C-n>
+
+" completion by tab in insert-mode
+inoremap <C-i> <C-o>I
+inoremap <C-a> <C-o>A
+
+" ignore files
+set wildignore=*.o,*.obj,*~
+set wildignore+=*DS_Store*
+
+" Allow to use system clipboard
+set clipboard+=unnamed
+
+" When jump, set cursor in the middle of screen
+set scrolloff=999
