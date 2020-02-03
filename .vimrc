@@ -225,9 +225,6 @@ let mapleader = "\<Space>"
 " https://qiita.com/todashuta/items/1362654c6276e5b69abc
 nnoremap <Leader>f :<C-u>/ oldfiles<Home>browse filter /
 
-" completion by tab in insert-mode
-inoremap <Tab> <C-n>
-
 " In insert-mode, easy-to-jump
 inoremap <C-i> <C-o>I
 inoremap <C-e> <C-o>E<C-o>a
@@ -241,3 +238,6 @@ set clipboard+=unnamed
 
 " When jump, set cursor in the middle of screen
 set scrolloff=999
+
+" completion by tab in insert-mode
+inoremap <Tab> <C-p>
