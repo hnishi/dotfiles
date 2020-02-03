@@ -228,9 +228,9 @@ nnoremap <Leader>f :<C-u>/ oldfiles<Home>browse filter /
 " completion by tab in insert-mode
 inoremap <Tab> <C-n>
 
-" completion by tab in insert-mode
+" In insert-mode, easy-to-jump
 inoremap <C-i> <C-o>I
-inoremap <C-a> <C-o>A
+inoremap <C-e> <C-o>E<C-o>a
 
 " ignore files
 set wildignore=*.o,*.obj,*~
