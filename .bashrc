@@ -74,7 +74,22 @@ export DOTLIBS_DIR=$HOME/.dotlibs
 ##          Prompt Configuration                              ##
 #--------------------------------------------------------------#
 
-# source
+# source ${DOTLIBS_DIR}/utils.bash
+
+# Show wall time of the last commands in PS1
+# https://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt
+function timer_start {
+  timer=${timer:-$SECONDS}
+}
+
+function timer_stop {
+  timer_show=$(($SECONDS - $timer))
+  unset timer
+}
+
+trap 'timer_start' DEBUG
+PROMPT_COMMAND=timer_stop
+
 
 # add されていない変更の存在を「＊」で示す
 # commit されていない変更の存在を「＋」で示す
@@ -88,7 +103,7 @@ GIT_PS1_SHOWSTASHSTATE=true
 # upstream より遅れている場合は「＜」で示す
 GIT_PS1_SHOWUPSTREAM=auto
 
-export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] [${?}]\n\$ '
+export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] [\$?: ${?}] [last: ${timer_show}s] \n\$ '
 
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
