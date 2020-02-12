@@ -58,6 +58,24 @@ fi
 #    source /path/to/git-prompt.sh
 #fi
 
+#--------------------------------------------------------------#
+##          Environment Variables                             ##
+#--------------------------------------------------------------#
+
+# TODO: Separate settings of environmet variables from .bashrc into a different file.
+#       like https://github.com/yutakatay/dotfiles/blob/80a0dfe3a63986550a51aa8dbb4d74746ae51a62/.zshenv
+
+# TODO: Create .dotlibs in my .dotfiles to implement the function to color exit status in PS!
+#       like https://github.com/yutakatay/dotfiles/blob/4f6f75c7ca4584500a1526954505372843a60ef1/.zsh/rc/prompt.zsh#L37
+
+export DOTLIBS_DIR=$HOME/.dotlibs
+
+#--------------------------------------------------------------#
+##          Prompt Configuration                              ##
+#--------------------------------------------------------------#
+
+# source
+
 # add されていない変更の存在を「＊」で示す
 # commit されていない変更の存在を「＋」で示す
 GIT_PS1_SHOWDIRTYSTATE=true
