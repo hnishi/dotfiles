@@ -117,9 +117,8 @@ PS1_USER="$GREEN\u@\h$WHITE:"
 #PS1_PATH="[ \$? = "0" ] && echo -n '$GREEN[\w]' || echo -n '$RED[\w]' && echo -n $GREY"
 #PS1_BRANCH="[ -z \$(__git_ps1 %s) ] && echo -n '' || __git_ps1 ':$CYAN[%s]$GREY'"
 PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
-PS1_LAST_WALL="$CYAN[last: ${timer_show}s]"
 
-export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED$(__git_ps1) \`$PS1_EXIT_STATUS\` $PS1_LAST_WALL $WHITE\n\$ "
+export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED$(__git_ps1) \`$PS1_EXIT_STATUS\` $CYAN[last: ${timer_show}s] $WHITE\n\$ "
 
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
