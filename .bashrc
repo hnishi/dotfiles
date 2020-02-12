@@ -90,7 +90,6 @@ function timer_stop {
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=timer_stop
 
-
 # add されていない変更の存在を「＊」で示す
 # commit されていない変更の存在を「＋」で示す
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -103,7 +102,24 @@ GIT_PS1_SHOWSTASHSTATE=true
 # upstream より遅れている場合は「＜」で示す
 GIT_PS1_SHOWUPSTREAM=auto
 
-export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] [\$?: ${?}] [last: ${timer_show}s] \n\$ '
+# Color definitions
+WHITE="\[\033[00m\]"
+GREY="\[\e[0m\]"
+YELLOW="\[\e[0;33m\]"
+DARK_GREEN="\[\e[0;32m\]"
+GREEN="\[\033[1;32m\]"
+CYAN="\[\e[0;36m\]"
+PALE_BLUE="\[\033[1;34m\]"
+RED="\[\e[0;31m\]"
+PALE_RED="\[\033[1;31m\]"
+
+PS1_USER="$GREEN\u@\h$WHITE:"
+#PS1_PATH="[ \$? = "0" ] && echo -n '$GREEN[\w]' || echo -n '$RED[\w]' && echo -n $GREY"
+#PS1_BRANCH="[ -z \$(__git_ps1 %s) ] && echo -n '' || __git_ps1 ':$CYAN[%s]$GREY'"
+PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
+PS1_LAST_WALL="$CYAN[last: ${timer_show}s]"
+
+export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED$(__git_ps1) \`$PS1_EXIT_STATUS\` $PS1_LAST_WALL $WHITE\n\$ "
 
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
