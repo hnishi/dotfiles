@@ -50,6 +50,7 @@ fi
 
 # completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/etc/profile.d/bash_completion.sh"
 
 #if [ -f /path/to/git-completion.bash ]; then
 #    source /path/to/git-completion.bash
