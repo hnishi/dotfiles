@@ -1,0 +1,10 @@
+{
+    "editor.rulers": [80],
+    "editor.formatOnPaste": true,
+    "workbench.colorTheme": "Default Light+",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "sync.gist": "bd43cc1108876ab1b2cb5595e09c65f9",
+    "files.trimTrailingWhitespace": true,
+    "python.linting.enabled": true,
+    "editor.wordWrap": "on"
+}
