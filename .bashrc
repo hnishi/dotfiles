@@ -80,22 +80,6 @@ export DOTLIBS_DIR=$HOME/.dotlibs
 ##          Prompt Configuration                              ##
 #--------------------------------------------------------------#
 
-# source ${DOTLIBS_DIR}/utils.bash
-
-# Show wall time of the last commands in PS1
-# https://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt
-function timer_start {
-  timer=${timer:-$SECONDS}
-}
-
-function timer_stop {
-  timer_show=$(($SECONDS - $timer))
-  unset timer
-}
-
-trap 'timer_start' DEBUG
-PROMPT_COMMAND=timer_stop
-
 # add されていない変更の存在を「＊」で示す
 # commit されていない変更の存在を「＋」で示す
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -122,9 +106,47 @@ PALE_RED="\[\033[1;31m\]"
 PS1_USER="$GREEN\u@\h$WHITE:"
 #PS1_PATH="[ \$? = "0" ] && echo -n '$GREEN[\w]' || echo -n '$RED[\w]' && echo -n $GREY"
 #PS1_BRANCH="[ -z \$(__git_ps1 %s) ] && echo -n '' || __git_ps1 ':$CYAN[%s]$GREY'"
-PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
+#PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
+#PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
+#PS1_EXIT_STATUS='echo \$?'
 
-export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) \`$PS1_EXIT_STATUS\` $CYAN[last: \${timer_show}s] $WHITE\n\$ "
+export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
+
+#export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [\$?: \`$PS1_EXIT_STATUS\`] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
+
+# source ${DOTLIBS_DIR}/utils.bash
+
+# Show wall time of the last commands in PS1
+# https://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt
+function timer_start {
+  timer=${timer:-$SECONDS}
+}
+
+function timer_stop {
+  timer_show=$(($SECONDS - $timer))
+  unset timer
+}
+
+trap 'timer_start' DEBUG
+PROMPT_COMMAND=timer_stop
+
+# TODO: 削除予定
+#function get_ps1_status_code {
+#  status=`echo $?`
+#  echo $status
+#  if [ $status = 0 ];then
+#    echo -n "\[\033[1;32m\][\$?: $status]"
+#  else
+#    echo -n "\[\e[0;31m\][\$?: $status]"
+#  fi
+#  #echo $?
+#  #if [ $? = 0 ];then
+#  #  echo -n "\[\033[1;32m\][\$?: $status]"
+#  #else
+#  #  echo -n "\[\e[0;31m\][\$?: $status]"
+#  #fi
+#  #echo $(status=$? && [ $status = 0 ] && echo -n "\[\033[1;32m\][\$?: $status]" || echo -n "\[\e[0;31m\][\$?: $status]")
+#}
 
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
