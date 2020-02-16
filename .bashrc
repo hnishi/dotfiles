@@ -49,7 +49,13 @@ if ! shopt -oq posix; then
 fi
 
 # completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
+  . "/usr/local/etc/profile.d/bash_completion.sh"
+elif [[ -r "/etc/profile.d/bash_completion.sh" ]]; then
+  . "/etc/profile.d/bash_completion.sh"
+else
+  echo "bash_completion.sh was not found (~/.bashrc)."
+fi
 
 #if [ -f /path/to/git-completion.bash ]; then
 #    source /path/to/git-completion.bash
