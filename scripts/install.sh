@@ -62,14 +62,14 @@ while [ $# -gt 0 ];do
 done
 
 # Install VSCode settings
-PATH_VSCODE_SETTING="$HOME/Library/Application Support/Code/User/settings.json"
-if [[ -f $PATH_VSCODE_SETTING ]]
-then
-  echo \"$PATH_VSCODE_SETTING\" already exists
-  echo backing it up to \"$HOME/.gdotbackup\"
-  mv "$PATH_VSCODE_SETTING" "$HOME/.gdotbackup"
-  ln -snf "$HOME/.vscode/settings.json" "$PATH_VSCODE_SETTING"
-fi
+#PATH_VSCODE_SETTING="$HOME/Library/Application Support/Code/User/settings.json"
+#if [[ -f $PATH_VSCODE_SETTING ]]
+#then
+#  echo \"$PATH_VSCODE_SETTING\" already exists
+#  echo backing it up to \"$HOME/.gdotbackup\"
+#  mv "$PATH_VSCODE_SETTING" "$HOME/.gdotbackup"
+#  ln -snf "$HOME/.vscode/settings.json" "$PATH_VSCODE_SETTING"
+#fi
 
 if [[ "$IS_INSTALL" = true ]];then
   link_to_homedir
