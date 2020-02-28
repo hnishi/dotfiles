@@ -20,6 +20,9 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# Show date and time in history
+export HISTTIMEFORMAT='%F %T '
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -46,7 +49,13 @@ if ! shopt -oq posix; then
 fi
 
 # completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
+  . "/usr/local/etc/profile.d/bash_completion.sh"
+elif [[ -r "/etc/profile.d/bash_completion.sh" ]]; then
+  . "/etc/profile.d/bash_completion.sh"
+else
+  echo "bash_completion.sh was not found (~/.bashrc)."
+fi
 
 #if [ -f /path/to/git-completion.bash ]; then
 #    source /path/to/git-completion.bash
@@ -54,6 +63,22 @@ fi
 #if [ -f /path/to/git-prompt.sh ]; then
 #    source /path/to/git-prompt.sh
 #fi
+
+#--------------------------------------------------------------#
+##          Environment Variables                             ##
+#--------------------------------------------------------------#
+
+# TODO: Separate settings of environmet variables from .bashrc into a different file.
+#       like https://github.com/yutakatay/dotfiles/blob/80a0dfe3a63986550a51aa8dbb4d74746ae51a62/.zshenv
+
+# TODO: Create .dotlibs in my .dotfiles to implement the function to color exit status in PS!
+#       like https://github.com/yutakatay/dotfiles/blob/4f6f75c7ca4584500a1526954505372843a60ef1/.zsh/rc/prompt.zsh#L37
+
+export DOTLIBS_DIR=$HOME/.dotlibs
+
+#--------------------------------------------------------------#
+##          Prompt Configuration                              ##
+#--------------------------------------------------------------#
 
 # add されていない変更の存在を「＊」で示す
 # commit されていない変更の存在を「＋」で示す
@@ -67,7 +92,61 @@ GIT_PS1_SHOWSTASHSTATE=true
 # upstream より遅れている場合は「＜」で示す
 GIT_PS1_SHOWUPSTREAM=auto
 
-export PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \n\$ '
+# Color definitions
+WHITE="\[\033[00m\]"
+GREY="\[\e[0m\]"
+YELLOW="\[\e[0;33m\]"
+DARK_GREEN="\[\e[0;32m\]"
+GREEN="\[\033[1;32m\]"
+CYAN="\[\e[0;36m\]"
+PALE_BLUE="\[\033[1;34m\]"
+RED="\[\e[0;31m\]"
+PALE_RED="\[\033[1;31m\]"
+
+PS1_USER="$GREEN\u@\h$WHITE:"
+#PS1_PATH="[ \$? = "0" ] && echo -n '$GREEN[\w]' || echo -n '$RED[\w]' && echo -n $GREY"
+#PS1_BRANCH="[ -z \$(__git_ps1 %s) ] && echo -n '' || __git_ps1 ':$CYAN[%s]$GREY'"
+#PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
+#PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
+#PS1_EXIT_STATUS='echo \$?'
+
+export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
+
+#export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [\$?: \`$PS1_EXIT_STATUS\`] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
+
+# source ${DOTLIBS_DIR}/utils.bash
+
+# Show wall time of the last commands in PS1
+# https://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt
+function timer_start {
+  timer=${timer:-$SECONDS}
+}
+
+function timer_stop {
+  timer_show=$(($SECONDS - $timer))
+  unset timer
+}
+
+trap 'timer_start' DEBUG
+PROMPT_COMMAND=timer_stop
+
+# TODO: 削除予定
+#function get_ps1_status_code {
+#  status=`echo $?`
+#  echo $status
+#  if [ $status = 0 ];then
+#    echo -n "\[\033[1;32m\][\$?: $status]"
+#  else
+#    echo -n "\[\e[0;31m\][\$?: $status]"
+#  fi
+#  #echo $?
+#  #if [ $? = 0 ];then
+#  #  echo -n "\[\033[1;32m\][\$?: $status]"
+#  #else
+#  #  echo -n "\[\e[0;31m\][\$?: $status]"
+#  #fi
+#  #echo $(status=$? && [ $status = 0 ] && echo -n "\[\033[1;32m\][\$?: $status]" || echo -n "\[\e[0;31m\][\$?: $status]")
+#}
 
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
