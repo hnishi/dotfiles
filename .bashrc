@@ -110,7 +110,7 @@ PS1_USER="$GREEN\u@\h$WHITE:"
 #PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
 #PS1_EXIT_STATUS='echo \$?'
 
-export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
+export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED$(__git_ps1) $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
 
 #export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [\$?: \`$PS1_EXIT_STATUS\`] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
 

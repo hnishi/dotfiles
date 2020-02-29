@@ -27,7 +27,7 @@ link_to_homedir() {
         command rm -f "$HOME/`basename $f`"
       fi
       if [[ -e "$HOME/`basename $f`" ]];then
-        command mv "$HOME/`basename $f`" "$HOME/.gdotbackup"
+        command mv --backup=numbered "$HOME/`basename $f`" "$HOME/.gdotbackup"
       fi
       command ln -snf $f $HOME
     done
