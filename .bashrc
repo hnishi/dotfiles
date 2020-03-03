@@ -104,16 +104,8 @@ RED="\[\e[0;31m\]"
 PALE_RED="\[\033[1;31m\]"
 
 PS1_USER="$GREEN\u@\h$WHITE:"
-#PS1_PATH="[ \$? = "0" ] && echo -n '$GREEN[\w]' || echo -n '$RED[\w]' && echo -n $GREY"
-#PS1_BRANCH="[ -z \$(__git_ps1 %s) ] && echo -n '' || __git_ps1 ':$CYAN[%s]$GREY'"
-#PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
-#PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
-#PS1_EXIT_STATUS='echo \$?'
 
-export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED \`__git_ps1\` $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
-#export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED $(__git_ps1) $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE\n\$ " # this works for mingw
-
-#export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [\$?: \`$PS1_EXIT_STATUS\`] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
+export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED \`__git_ps1\` $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE[`date +%Y%m%d-%H:%M:%S`]\n\$ "
 
 # source ${DOTLIBS_DIR}/utils.bash
 
