@@ -3,6 +3,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 
+echo reading .bashrc
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -29,7 +31,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-shopt -s globstar
+shopt -s globstar &> /dev/null
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -53,8 +55,8 @@ if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
   . "/usr/local/etc/profile.d/bash_completion.sh"
 elif [[ -r "/etc/profile.d/bash_completion.sh" ]]; then
   . "/etc/profile.d/bash_completion.sh"
-else
-  echo "bash_completion.sh was not found (~/.bashrc)."
+#else
+#  echo "bash_completion.sh was not found (~/.bashrc)."
 fi
 
 #if [ -f /path/to/git-completion.bash ]; then
@@ -104,17 +106,15 @@ RED="\[\e[0;31m\]"
 PALE_RED="\[\033[1;31m\]"
 
 PS1_USER="$GREEN\u@\h$WHITE:"
-#PS1_PATH="[ \$? = "0" ] && echo -n '$GREEN[\w]' || echo -n '$RED[\w]' && echo -n $GREY"
-#PS1_BRANCH="[ -z \$(__git_ps1 %s) ] && echo -n '' || __git_ps1 ':$CYAN[%s]$GREY'"
-#PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
-#PS1_EXIT_STATUS="[ $? = "0" ] && echo -n '$DARK_GREEN[exit: $?]' || echo -n '$RED[exit: $?]'"
-#PS1_EXIT_STATUS='echo \$?'
 
-export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
-
-#export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED\$(__git_ps1) $DARK_GREEN [\$?: \`$PS1_EXIT_STATUS\`] $CYAN[last: \${timer_show}s] $WHITE\n\$ "
+export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED \`__git_ps1\` $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE[\${prompt_datetime}]\n\$ "
 
 # source ${DOTLIBS_DIR}/utils.bash
+
+# to show date and time in PS1
+function get_datetime {
+  prompt_datetime=$(date +%Y%m%d-%H:%M:%S)
+}
 
 # Show wall time of the last commands in PS1
 # https://stackoverflow.com/questions/1862510/how-can-the-last-commands-wall-time-be-put-in-the-bash-prompt
@@ -128,25 +128,23 @@ function timer_stop {
 }
 
 trap 'timer_start' DEBUG
-PROMPT_COMMAND=timer_stop
 
-# TODO: 削除予定
-#function get_ps1_status_code {
-#  status=`echo $?`
-#  echo $status
-#  if [ $status = 0 ];then
-#    echo -n "\[\033[1;32m\][\$?: $status]"
-#  else
-#    echo -n "\[\e[0;31m\][\$?: $status]"
-#  fi
-#  #echo $?
-#  #if [ $? = 0 ];then
-#  #  echo -n "\[\033[1;32m\][\$?: $status]"
-#  #else
-#  #  echo -n "\[\e[0;31m\][\$?: $status]"
-#  #fi
-#  #echo $(status=$? && [ $status = 0 ] && echo -n "\[\033[1;32m\][\$?: $status]" || echo -n "\[\e[0;31m\][\$?: $status]")
-#}
+# ディスパッチ処理
+# https://qiita.com/tay07212/items/9509aef6dc3bffa7dd0c
+dispatch () {
+  export EXIT_STATUS="$?" # 直前のコマンド実行結果のエラーコードを保存
+
+  local f
+  for f in ${!PROMPT_COMMAND_*}; do #${!HOGE*}は、HOGEで始まる変数の一覧を得る
+      eval "${!f}" # "${!f}"は、$fに格納された文字列を名前とする変数を参照する（間接参照）
+  done
+  unset f
+
+  timer_stop
+  get_datetime
+}
+
+PROMPT_COMMAND=dispatch
 
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
@@ -195,7 +193,8 @@ fi
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
+  pyenv init - &> /dev/null
+  #eval "$(pyenv init -)"
 fi
 
 # Alias definitions.
