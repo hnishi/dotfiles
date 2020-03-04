@@ -6,3 +6,6 @@
 	excludesfile = ~/.gitignore_global
 [github]
 	user = hnishi
+[grep]
+	lineNumber = true
+	patternType = extended
