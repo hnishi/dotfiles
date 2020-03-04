@@ -3,6 +3,8 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 
+echo reading .bashrc
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -29,7 +31,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-shopt -s globstar
+shopt -s globstar &> /dev/null
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -53,8 +55,8 @@ if [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]]; then
   . "/usr/local/etc/profile.d/bash_completion.sh"
 elif [[ -r "/etc/profile.d/bash_completion.sh" ]]; then
   . "/etc/profile.d/bash_completion.sh"
-else
-  echo "bash_completion.sh was not found (~/.bashrc)."
+#else
+#  echo "bash_completion.sh was not found (~/.bashrc)."
 fi
 
 #if [ -f /path/to/git-completion.bash ]; then
