@@ -9,6 +9,7 @@
 # Normalize line endings to LF on checkin, and do NOT convert to CRLF when checking-out on Windows.
 # https://git-scm.com/docs/gitattributes#gitattributes-Settostringvaluelf
 .gitattributes text eol=lf
+.gitignore text eol=lf
 *.txt text eol=lf
 *.html text eol=lf
 *.md text eol=lf
