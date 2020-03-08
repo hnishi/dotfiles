@@ -4,15 +4,7 @@
 
 module.exports = {
   config: {
-    
-    // pokemon setting　（プラグイン用）
-    pokemon: 'random',
-    pokecursor: false,
-    pokemonSyntax: 'dark',
-    unibody: false,
-    poketab: true,
-    // pokemon setting end
-    
+
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
@@ -102,6 +94,14 @@ module.exports = {
       lightWhite: '#FFFFFF',
     },
 
+    //// pokemon setting　（プラグイン用）
+    //pokemon: 'random',
+    //pokecursor: false,
+    //pokemonSyntax: 'dark',
+    //unibody: false,
+    //poketab: true,
+    //// pokemon setting end
+
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     //
@@ -115,7 +115,7 @@ module.exports = {
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
     //shell: '',
-    shell: 'c:\\Windows\\System32\\wsl.exe', 
+    shell: 'c:\\Windows\\System32\\wsl.exe',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
@@ -139,7 +139,7 @@ module.exports = {
     // selection is present (`true` by default on Windows and disables the context menu feature)
     //quickEdit: false,
     quickEdit: false,
-    
+
     // choose either `'vertical'`, if you want the column mode when Option key is hold during selection (Default)
     // or `'force'`, if you want to force selection regardless of whether the terminal is in mouse events mode
     // (inside tmux or vim with mouse mode enabled for example).
@@ -168,7 +168,7 @@ module.exports = {
   //   `project#1.0.1`
   //plugins: [],
   plugins: [
-    'hyper-pokemon',
+    //'hyper-pokemon',
     'hyper-opacity',
     'hyperlinks',
     'hyper-search',

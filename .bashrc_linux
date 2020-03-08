@@ -1,5 +1,7 @@
 # bashrc for linux (ubuntu)
 
+echo reading .bashrc_linux
+
 # if you use ubuntu
 # apt install bash-completion
 

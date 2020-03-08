@@ -1,5 +1,7 @@
 # bashrc for mac (FreeBSD/Darwin)
 
+echo reading .bashrc_mac
+
 # git completion
 source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 # git prompt

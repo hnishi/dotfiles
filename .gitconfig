@@ -7,3 +7,6 @@
 	attributesfile = ~/.gitattributes
 [github]
 	user = hnishi
+[grep]
+	lineNumber = true
+	patternType = extended

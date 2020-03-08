@@ -151,6 +151,9 @@ nnoremap <C-]> g<C-]>
 inoremap <C-]> <ESC>g<C-]>
 
 " Tag jump (ctags -R -f .tags)
+" If you use gnu ctags, do
+" `find . -type f | grep -e ".py$\|\.h$\|.cc$\|.cpp$\|.hpp$\|.cu$" | xargs
+" ctags - -f .tags`
 " Recommended: https://github.com/universal-ctags/ctags
 " https://qiita.com/tutu/items/fbc4023ebc3004964e86
 set tags=.tags;~ " search .tags up to $HOME
