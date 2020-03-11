@@ -1,9 +1,19 @@
 // Future versions of Hyper may add additional config options,
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
+//
+// On windows, setting file is located at C:\Users\nishi\AppData\Roaming\Hyper\.hyper.js
 
 module.exports = {
   config: {
+
+    // pokemon setting　（プラグイン用）
+    // pokemon: 'random',
+    // pokecursor: false,
+    // pokemonSyntax: 'dark',
+    // unibody: false,
+    // poketab: true,
+    // pokemon setting end
 
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
@@ -94,14 +104,6 @@ module.exports = {
       lightWhite: '#FFFFFF',
     },
 
-    //// pokemon setting　（プラグイン用）
-    //pokemon: 'random',
-    //pokecursor: false,
-    //pokemonSyntax: 'dark',
-    //unibody: false,
-    //poketab: true,
-    //// pokemon setting end
-
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     //
@@ -155,10 +157,10 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
 
-    opacity: { // プラグイン用
-        focus: 0.95,
-        blur: 0.4,
-    },
+  // opacity: { // プラグイン用
+  //     focus: 0.95,
+  //     blur: 0.4,
+  // },
 
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
@@ -169,10 +171,10 @@ module.exports = {
   //plugins: [],
   plugins: [
     //'hyper-pokemon',
-    'hyper-opacity',
-    'hyperlinks',
-    'hyper-search',
-    'hyperpower',
+    // 'hyper-opacity',
+    // 'hyperlinks',
+    // 'hyper-search',
+    // 'hyperpower',
   ],
 
   // in development, you can create a directory under
