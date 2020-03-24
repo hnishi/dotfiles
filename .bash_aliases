@@ -16,6 +16,10 @@ elif [[ $platform == 'freebsd' ]]; then
    alias ls='ls -G'
 fi
 
+# confirmation
+alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
 # enable color support of ls and also add handy aliases
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
