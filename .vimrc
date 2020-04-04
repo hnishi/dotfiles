@@ -244,3 +244,10 @@ set scrolloff=999
 
 " completion by tab in insert-mode
 inoremap <Tab> <C-p>
+
+" https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
+" Enter key for adding a new line without entering insert mode
+nmap <S-Enter> O<Esc>
+" Shift-Enter for inserting a line before the current line
+nmap <CR> o<Esc>
+
