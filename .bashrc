@@ -95,19 +95,16 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 # Color definitions
-WHITE="\[\033[00m\]"
-GREY="\[\e[0m\]"
+WHITE="\[\e[0m\]"
 YELLOW="\[\e[0;33m\]"
 DARK_GREEN="\[\e[0;32m\]"
-GREEN="\[\033[1;32m\]"
+GREEN="\[\e[1;32m\]"
 CYAN="\[\e[0;36m\]"
-PALE_BLUE="\[\033[1;34m\]"
+PALE_BLUE="\[\e[1;34m\]"
 RED="\[\e[0;31m\]"
-PALE_RED="\[\033[1;31m\]"
+PALE_RED="\[\e[1;31m\]"
 
-PS1_USER="$GREEN\u@\h$WHITE:"
-
-export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED \`__git_ps1\` $DARK_GREEN [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE[\${prompt_datetime}]\n\$ "
+PS1_USER="\u@\h"
 
 # source ${DOTLIBS_DIR}/utils.bash
 
@@ -132,7 +129,8 @@ trap 'timer_start' DEBUG
 # ディスパッチ処理
 # https://qiita.com/tay07212/items/9509aef6dc3bffa7dd0c
 dispatch () {
-  export EXIT_STATUS="$?" # 直前のコマンド実行結果のエラーコードを保存
+  local EXIT_STATUS="$?" # 直前のコマンド実行結果のエラーコードを保存
+  #export EXIT_STATUS="$?" # 直前のコマンド実行結果のエラーコードを保存
 
   local f
   for f in ${!PROMPT_COMMAND_*}; do #${!HOGE*}は、HOGEで始まる変数の一覧を得る
@@ -142,9 +140,19 @@ dispatch () {
 
   timer_stop
   get_datetime
+
+  # https://shuheikagawa.com/blog/2015/10/18/color-prompt-by-exit-code/
+  local status_color=""
+  if [ $EXIT_STATUS != 0 ]; then
+    status_color=$PALE_RED
+  else
+    status_color=$DARK_GREEN
+  fi
+  #export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED $(__git_ps1) $DARK_GREEN ${status_color} [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE[\${prompt_datetime}]\n\$ "
+  export PS1="${GREEN}${PS1_USER}${WHITE}:${PALE_BLUE}\w${CYAN}$(__git_ps1) ${status_color} [exit: \$?] ${WHITE}[last: ${timer_show}s] [${prompt_datetime}]\n\$ "
 }
 
-PROMPT_COMMAND=dispatch
+export PROMPT_COMMAND=dispatch
 
 # Load OS-specific settings
 # https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
