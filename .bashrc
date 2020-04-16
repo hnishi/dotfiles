@@ -184,7 +184,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
   platform='freebsd'
 fi
 
-echo your platform is $platform
+#echo your platform is $platform
 
 if [[ $platform == 'linux' ]]; then
   source "${HOME}/.bashrc_linux"
