@@ -23,6 +23,9 @@ HISTFILESIZE=2000
 # Show date and time in history
 export HISTTIMEFORMAT='%F %T '
 
+# https://twitter.com/nixcraft/status/1258027970406408192
+export HISTIGNORE='ls *:pwd'
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
