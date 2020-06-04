@@ -251,3 +251,7 @@ nmap <S-Enter> O<Esc>
 " Shift-Enter for inserting a line before the current line
 nmap <CR> o<Esc>
 
+" move in insert-mode
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
