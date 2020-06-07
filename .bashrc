@@ -24,7 +24,7 @@ HISTFILESIZE=2000
 export HISTTIMEFORMAT='%F %T '
 
 # https://twitter.com/nixcraft/status/1258027970406408192
-export HISTIGNORE='ls *:pwd'
+#export HISTIGNORE='ls *:pwd'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
