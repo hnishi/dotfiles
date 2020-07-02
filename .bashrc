@@ -69,7 +69,16 @@ fi
 #    source /path/to/git-prompt.sh
 #fi
 
+# Since MacOS Catalina (version 10.15), the followings are not available.
+# Thus, I hold the scripts in this repository.
+# The scripts are from https://github.com/git/git/tree/master/contrib/completion
+# git completion
+source ~/.git-completion.bash
+# git prompt
+source ~/.git-prompt.sh
+
 #--------------------------------------------------------------#
+
 ##          Environment Variables                             ##
 #--------------------------------------------------------------#
 
