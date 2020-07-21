@@ -27,7 +27,11 @@ set showmatch
 "set cursorcolumn
 " Highlight the current line
 "set cursorline
+"
+"文字コード自動判別
+"https://itcweb.cc.affrc.go.jp/affrit/faq/tips/vim-enc
 set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 
 colorscheme peachpuff
 
