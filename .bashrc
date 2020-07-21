@@ -23,6 +23,9 @@ HISTFILESIZE=2000
 # Show date and time in history
 export HISTTIMEFORMAT='%F %T '
 
+# https://twitter.com/nixcraft/status/1258027970406408192
+#export HISTIGNORE='ls *:pwd'
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -66,7 +69,16 @@ fi
 #    source /path/to/git-prompt.sh
 #fi
 
+# Since MacOS Catalina (version 10.15), the followings are not available.
+# Thus, I hold the scripts in this repository.
+# The scripts are from https://github.com/git/git/tree/master/contrib/completion
+# git completion
+source ~/.git-completion.bash
+# git prompt
+source ~/.git-prompt.sh
+
 #--------------------------------------------------------------#
+
 ##          Environment Variables                             ##
 #--------------------------------------------------------------#
 

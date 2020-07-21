@@ -1,9 +1,12 @@
 # bashrc for mac (FreeBSD/Darwin)
 
+# Since MacOS Catalina (version 10.15), the followings are not available.
+# Thus, I hold the scripts in this repository.
+# The scripts are from https://github.com/git/git/tree/master/contrib/completion
 # git completion
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+#source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 # git prompt
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+#source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 
 # enable color
 #export CLICOLOR=1

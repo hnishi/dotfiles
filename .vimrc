@@ -27,7 +27,11 @@ set showmatch
 "set cursorcolumn
 " Highlight the current line
 "set cursorline
+"
+"文字コード自動判別
+"https://itcweb.cc.affrc.go.jp/affrit/faq/tips/vim-enc
 set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 
 colorscheme peachpuff
 
@@ -143,7 +147,7 @@ set modifiable
 set fileencoding=utf-8 fileformat=unix
 
 " ファイル保存時に、不要な行末スペースを自動で削除
-autocmd BufWritePre * :%s/\s\+$//ge
+"autocmd BufWritePre * :%s/\s\+$//ge
 
 " tag jump
 " https://qiita.com/crarrry/items/3887b084267d60d3c42f
@@ -250,4 +254,8 @@ inoremap <Tab> <C-p>
 nmap <S-Enter> O<Esc>
 " Shift-Enter for inserting a line before the current line
 nmap <CR> o<Esc>
+
+" move in insert-mode
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 
