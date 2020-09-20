@@ -9,3 +9,4 @@ zzz*
 .python-version
 .ipynb_checkpoints/
 .tool-versions
+.venv/
