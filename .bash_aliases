@@ -36,3 +36,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias vi=vim
 alias dirs="dirs -v"
 
+# https://twitter.com/RitzmannMarkus/status/1308732440974962688
+function cheat() { 
+  curl https://cheat.sh/"$1" 
+}
+
