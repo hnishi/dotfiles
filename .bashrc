@@ -224,3 +224,5 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+export LANG=ja_JP.UTF-8
+
