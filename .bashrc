@@ -215,6 +215,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)" &> /dev/null
 fi
 
+if command -v pipenv 1>/dev/null 2>&1; then
+  eval "$(pipenv --completion)"
+fi
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
