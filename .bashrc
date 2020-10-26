@@ -90,6 +90,9 @@ source ~/.git-prompt.sh
 
 export DOTLIBS_DIR=$HOME/.dotlibs
 
+# Language
+export LANG=ja_JP.UTF-8
+
 #--------------------------------------------------------------#
 ##          Prompt Configuration                              ##
 #--------------------------------------------------------------#
@@ -223,11 +226,6 @@ elif [[ $platform == 'freebsd' ]]; then
   source "${HOME}/.bashrc_mac"
 fi
 
-# 個々の環境のbash設定を読み込む
-if [ -e "${HOME}/.bashrc_local" ]; then
-  source "${HOME}/.bashrc_local"
-fi
-
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
@@ -249,5 +247,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export LANG=ja_JP.UTF-8
+# 個々の環境のbash設定を読み込む
+if [ -e "${HOME}/.bashrc_local" ]; then
+  source "${HOME}/.bashrc_local"
+fi
 
