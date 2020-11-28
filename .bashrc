@@ -90,6 +90,9 @@ source ~/.git-prompt.sh
 
 export DOTLIBS_DIR=$HOME/.dotlibs
 
+# Language
+export LANG=ja_JP.UTF-8
+
 #--------------------------------------------------------------#
 ##          Prompt Configuration                              ##
 #--------------------------------------------------------------#
@@ -115,6 +118,7 @@ CYAN="\[\e[0;36m\]"
 PALE_BLUE="\[\e[1;34m\]"
 RED="\[\e[0;31m\]"
 PALE_RED="\[\e[1;31m\]"
+MAGENTA="\[\e[0;35m\]"
 
 PS1_USER="\u@\h"
 
@@ -138,6 +142,23 @@ function timer_stop {
 
 trap 'timer_start' DEBUG
 
+# add info of virtual env in prompt
+# https://stackoverflow.com/a/20026992
+function virtualenv_info(){
+    # Get Virtual Env
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        # Strip out the path and just leave the env name
+        venv="${VIRTUAL_ENV##*/}"
+    else
+        # In case you don't have one activated
+        venv=''
+    fi
+    [[ -n "$venv" ]] && echo "(venv:$venv) "
+}
+
+# disable the default virtualenv prompt change
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # ディスパッチ処理
 # https://qiita.com/tay07212/items/9509aef6dc3bffa7dd0c
 dispatch () {
@@ -160,8 +181,11 @@ dispatch () {
   else
     status_color=$DARK_GREEN
   fi
+
+  VENV="\$(virtualenv_info)";
+
   #export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED $(__git_ps1) $DARK_GREEN ${status_color} [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE[\${prompt_datetime}]\n\$ "
-  export PS1="${GREEN}${PS1_USER}${WHITE}:${PALE_BLUE}\w${CYAN}$(__git_ps1) ${status_color} [exit: \$?] ${WHITE}[last: ${timer_show}s] [${prompt_datetime}]\n\$ "
+  export PS1="${MAGENTA}${VENV}${GREEN}${PS1_USER}${WHITE}:${PALE_BLUE}\w${CYAN}$(__git_ps1) ${status_color} [exit: \$?] ${WHITE}[last: ${timer_show}s] [${prompt_datetime}]\n\$ "
 }
 
 export PROMPT_COMMAND=dispatch
@@ -202,11 +226,6 @@ elif [[ $platform == 'freebsd' ]]; then
   source "${HOME}/.bashrc_mac"
 fi
 
-# 個々の環境のbash設定を読み込む
-if [ -e "${HOME}/.bashrc_local" ]; then
-  source "${HOME}/.bashrc_local"
-fi
-
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
@@ -228,5 +247,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export LANG=ja_JP.UTF-8
+# 個々の環境のbash設定を読み込む
+if [ -e "${HOME}/.bashrc_local" ]; then
+  source "${HOME}/.bashrc_local"
+fi
 

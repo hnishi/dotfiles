@@ -5,6 +5,8 @@
 	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
+	autoCRLF = false
+	autoLF = false
 [github]
 	user = hnishi
 [grep]
