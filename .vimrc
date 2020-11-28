@@ -31,9 +31,9 @@ set showmatch
 "文字コード自動判別
 "https://itcweb.cc.affrc.go.jp/affrit/faq/tips/vim-enc
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
-colorscheme peachpuff
+"colorscheme peachpuff
 
 "au BufWritePost * mkview
 "autocmd BufReadPost * loadview
@@ -121,6 +121,8 @@ call plug#begin()
 " Gist client for vim
 Plug 'mattn/webapi-vim'
 Plug 'mattn/vim-gist'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 call plug#end()
 " `:PlugInstall` to install plugins
 
