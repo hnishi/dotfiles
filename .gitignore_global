@@ -10,4 +10,5 @@ zzz*
 .ipynb_checkpoints/
 .tool-versions
 .venv/
-hnishi_test/
+hnishi_*/
+hnishi_*
