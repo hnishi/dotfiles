@@ -12,3 +12,5 @@ zzz*
 .venv/
 hnishi_*/
 hnishi_*
+*gz
+*crt
