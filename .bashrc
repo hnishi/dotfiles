@@ -238,6 +238,9 @@ if command -v pipenv 1>/dev/null 2>&1; then
   eval "$(pipenv --completion)"
 fi
 
+# pipenv
+export PIPENV_VENV_IN_PROJECT=1
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.

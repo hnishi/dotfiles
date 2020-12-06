@@ -10,4 +10,11 @@ zzz*
 .ipynb_checkpoints/
 .tool-versions
 .venv/
-hnishi_test/
+hnishi_*/
+hnishi_*
+*gz
+*crt
+*csv
+*xls
+*xlsx
+
