@@ -12,3 +12,5 @@
 [grep]
 	lineNumber = true
 	patternType = extended
+[init]
+	templatedir = ~/.git_template
