@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Ref: https://qiita.com/sensuikan1973/items/e6ab84403338a874b3aa
+while read local_ref local_sha1 remote_ref remote_sha1 
+do
+  if [[ "${remote_ref##refs/heads/}" =~ ^.*release.*$ ]]; then
+    echo -e "\033[0;32mDo not push to\033[m\033[1;34m release\033[m \033[0;32mbranch\033[m"
+    exit 1
+  fi
+  if [[ "${remote_ref##refs/heads/}" =~ ^.hnishi.*$ ]]; then
+    echo -e "\033[0;32mDo not push to\033[m\033[1;34m hnishi\033[m \033[0;32mbranch\033[m"
+    exit 1
+  fi
+done

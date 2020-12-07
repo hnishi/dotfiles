@@ -121,6 +121,7 @@ call plug#begin()
 " Gist client for vim
 Plug 'mattn/webapi-vim'
 Plug 'mattn/vim-gist'
+Plug 'mattn/vim-sonictemplate'
 call plug#end()
 " `:PlugInstall` to install plugins
 
