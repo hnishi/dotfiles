@@ -264,16 +264,16 @@ inoremap <C-b> <Left>
 " ファイル保存時に format を行う
 "autocmd BufWritePre <buffer> LspDocumentFormatSync
 " Enables echo of diagnostic error for the current line to status.
-"let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_echo_cursor = 1
 
 " vim-lsp-settings
 " https://github.com/mattn/vim-lsp-settings
-"let g:lsp_settings = {
-"\   'pyls-all': {
-"\     'workspace_config': {
-"\       'pyls': {
-"\         'configurationSources': ['flake8']
-"\       }
-"\     }
-"\   },
-"\}
+let g:lsp_settings = {
+\   'pyls-all': {
+\     'workspace_config': {
+\       'pyls': {
+\         'configurationSources': ['flake8']
+\       }
+\     }
+\   },
+\}
