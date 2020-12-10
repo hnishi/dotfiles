@@ -144,16 +144,17 @@ trap 'timer_start' DEBUG
 
 # add info of virtual env in prompt
 # https://stackoverflow.com/a/20026992
-function virtualenv_info(){
+function get_virtualenv_info(){
     # Get Virtual Env
     if [[ -n "$VIRTUAL_ENV" ]]; then
         # Strip out the path and just leave the env name
         venv="${VIRTUAL_ENV##*/}"
+        venv="(venv:$venv) "
     else
         # In case you don't have one activated
         venv=''
     fi
-    [[ -n "$venv" ]] && echo "(venv:$venv) "
+    #[[ -n "$venv" ]] && echo "(venv:$venv) "
 }
 
 # disable the default virtualenv prompt change
@@ -173,6 +174,7 @@ dispatch () {
 
   timer_stop
   get_datetime
+  get_virtualenv_info
 
   # https://shuheikagawa.com/blog/2015/10/18/color-prompt-by-exit-code/
   local status_color=""
@@ -182,10 +184,7 @@ dispatch () {
     status_color=$DARK_GREEN
   fi
 
-  VENV="\$(virtualenv_info)";
-
-  #export PS1="$PS1_USER$PALE_BLUE\w$PALE_RED $(__git_ps1) $DARK_GREEN ${status_color} [exit: \$?] $CYAN[last: \${timer_show}s] $WHITE[\${prompt_datetime}]\n\$ "
-  export PS1="${MAGENTA}${VENV}${GREEN}${PS1_USER}${WHITE}:${PALE_BLUE}\w${CYAN}$(__git_ps1) ${status_color} [exit: \$?] ${WHITE}[last: ${timer_show}s] [${prompt_datetime}]\n\$ "
+  export PS1="${MAGENTA}${venv}${GREEN}${PS1_USER}${WHITE}:${PALE_BLUE}\w${CYAN}$(__git_ps1) ${status_color} [exit: \$?] ${WHITE}[last: ${timer_show}s] [${prompt_datetime}]\n\$ "
 }
 
 export PROMPT_COMMAND=dispatch
