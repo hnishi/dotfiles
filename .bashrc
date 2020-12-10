@@ -149,12 +149,12 @@ function get_virtualenv_info(){
     if [[ -n "$VIRTUAL_ENV" ]]; then
         # Strip out the path and just leave the env name
         venv="${VIRTUAL_ENV##*/}"
+        venv="(venv:$venv) "
     else
         # In case you don't have one activated
         venv=''
     fi
     #[[ -n "$venv" ]] && echo "(venv:$venv) "
-    venv="(venv:$venv) "
 }
 
 # disable the default virtualenv prompt change
