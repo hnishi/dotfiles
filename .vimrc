@@ -35,9 +35,6 @@ set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 
 colorscheme peachpuff
 
-"au BufWritePost * mkview
-"autocmd BufReadPost * loadview
-
 " タブキー押下時に挿入される文字幅を指定
 "set softtabstop=4
 " 省略されずに表示
@@ -122,6 +119,8 @@ call plug#begin()
 Plug 'mattn/webapi-vim'
 Plug 'mattn/vim-gist'
 Plug 'mattn/vim-sonictemplate'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 call plug#end()
 " `:PlugInstall` to install plugins
 
@@ -260,3 +259,21 @@ nmap <CR> o<Esc>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
+" vim-lsp
+" https://github.com/prabirshrestha/vim-lsp/blob/master/doc/vim-lsp.txt
+" ファイル保存時に format を行う
+"autocmd BufWritePre <buffer> LspDocumentFormatSync
+" Enables echo of diagnostic error for the current line to status.
+let g:lsp_diagnostics_echo_cursor = 1
+
+" vim-lsp-settings
+" https://github.com/mattn/vim-lsp-settings
+let g:lsp_settings = {
+\   'pyls-all': {
+\     'workspace_config': {
+\       'pyls': {
+\         'configurationSources': ['flake8']
+\       }
+\     }
+\   },
+\}
