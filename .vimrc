@@ -277,3 +277,7 @@ let g:lsp_settings = {
 \     }
 \   },
 \}
+
+" vim-sonictemplate
+" https://github.com/mattn/vim-sonictemplate/blob/master/doc/sonictemplate.txt
+let g:sonictemplate_vim_template_dir = ['~/.vim/template']
