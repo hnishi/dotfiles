@@ -33,7 +33,7 @@ set showmatch
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 
-colorscheme peachpuff
+"colorscheme peachpuff
 
 " タブキー押下時に挿入される文字幅を指定
 "set softtabstop=4
@@ -277,3 +277,7 @@ let g:lsp_settings = {
 \     }
 \   },
 \}
+
+" vim-sonictemplate
+" https://github.com/mattn/vim-sonictemplate/blob/master/doc/sonictemplate.txt
+let g:sonictemplate_vim_template_dir = ['~/.vim/template']
