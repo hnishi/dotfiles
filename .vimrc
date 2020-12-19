@@ -123,6 +123,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'ferrine/md-img-paste.vim'
 Plug 'junegunn/vim-emoji'
+Plug 'mattn/emmet-vim'
 call plug#end()
 " `:PlugInstall` to install plugins
 
