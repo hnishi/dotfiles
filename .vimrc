@@ -121,6 +121,7 @@ Plug 'mattn/vim-gist'
 Plug 'mattn/vim-sonictemplate'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'ferrine/md-img-paste.vim'
 call plug#end()
 " `:PlugInstall` to install plugins
 
@@ -281,3 +282,9 @@ let g:lsp_settings = {
 " vim-sonictemplate
 " https://github.com/mattn/vim-sonictemplate/blob/master/doc/sonictemplate.txt
 let g:sonictemplate_vim_template_dir = ['~/.vim/template']
+
+" ferrine/md-img-paste.vim
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+" there are some defaults for image directory and image name, you can change them
+let g:mdip_imgdir = 'image'
+let g:mdip_imgname = 'image'
