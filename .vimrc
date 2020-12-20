@@ -31,7 +31,8 @@ set showmatch
 "文字コード自動判別
 "https://itcweb.cc.affrc.go.jp/affrit/faq/tips/vim-enc
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+"set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
 "colorscheme peachpuff
 
@@ -150,7 +151,7 @@ set modifiable
 set fileencoding=utf-8 fileformat=unix
 
 " ファイル保存時に、不要な行末スペースを自動で削除
-"autocmd BufWritePre * :%s/\s\+$//ge
+autocmd BufWritePre * :%s/\s\+$//ge
 
 " tag jump
 " https://qiita.com/crarrry/items/3887b084267d60d3c42f
