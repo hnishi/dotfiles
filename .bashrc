@@ -254,3 +254,7 @@ if [ -e "${HOME}/.bashrc_local" ]; then
   source "${HOME}/.bashrc_local"
 fi
 
+# 単語ごとに移動する key binding
+# Ref: https://superuser.com/questions/547130/bash-readline-for-move-forward-by-whitespace-delimited-word/1023236
+bind '"\C-f":vi-fWord'
+bind '"\C-b":vi-bWord'
