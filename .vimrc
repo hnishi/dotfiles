@@ -31,7 +31,8 @@ set showmatch
 "文字コード自動判別
 "https://itcweb.cc.affrc.go.jp/affrit/faq/tips/vim-enc
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+"set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
 "colorscheme peachpuff
 
@@ -121,6 +122,9 @@ Plug 'mattn/vim-gist'
 Plug 'mattn/vim-sonictemplate'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'ferrine/md-img-paste.vim'
+Plug 'junegunn/vim-emoji'
+Plug 'mattn/emmet-vim'
 call plug#end()
 " `:PlugInstall` to install plugins
 
@@ -147,7 +151,7 @@ set modifiable
 set fileencoding=utf-8 fileformat=unix
 
 " ファイル保存時に、不要な行末スペースを自動で削除
-"autocmd BufWritePre * :%s/\s\+$//ge
+autocmd BufWritePre * :%s/\s\+$//ge
 
 " tag jump
 " https://qiita.com/crarrry/items/3887b084267d60d3c42f
@@ -241,7 +245,7 @@ set wildignore=*.o,*.obj,*~
 set wildignore+=*DS_Store*
 
 " Allow to use system clipboard
-set clipboard+=unnamed
+"set clipboard+=unnamed
 
 " When jump, set cursor in the middle of screen
 set scrolloff=999
@@ -281,3 +285,21 @@ let g:lsp_settings = {
 " vim-sonictemplate
 " https://github.com/mattn/vim-sonictemplate/blob/master/doc/sonictemplate.txt
 let g:sonictemplate_vim_template_dir = ['~/.vim/template']
+
+" ferrine/md-img-paste.vim
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+" there are some defaults for image directory and image name, you can change them
+let g:mdip_imgdir = 'image'
+let g:mdip_imgname = 'image'
+
+" junegunn/vim-emoji
+set completefunc=emoji#complete
+
+" Ref: https://stackoverflow.com/questions/9985360/vim-plugin-for-adding-external-links
+" Create a Markdown-link structure for the current word or visual selection with
+" leader 3. Paste in the URL later. Or use leader 4 to insert the current
+" system clipboard as an URL.
+nnoremap <Leader>3 ciw[<C-r>"]()<Esc>
+vnoremap <Leader>3 c[<C-r>"]()<Esc>
+nnoremap <Leader>4 ciw[<C-r>"](<Esc>"*pa)<Esc>
+vnoremap <Leader>4 c[<C-r>"](<Esc>"*pa)<Esc>
