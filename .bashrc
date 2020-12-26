@@ -226,12 +226,12 @@ elif [[ $platform == 'freebsd' ]]; then
 fi
 
 # pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  #pyenv init - &> /dev/null
-  eval "$(pyenv init -)" &> /dev/null
-fi
+# TODO: remove this
+#if command -v pyenv 1>/dev/null 2>&1; then
+#  export PYENV_ROOT="$HOME/.pyenv"
+#  #pyenv init - &> /dev/null
+#  eval "$(pyenv init -)" &> /dev/null
+#fi
 
 if command -v pipenv 1>/dev/null 2>&1; then
   eval "$(pipenv --completion)"
