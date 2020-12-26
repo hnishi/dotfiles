@@ -226,12 +226,12 @@ elif [[ $platform == 'freebsd' ]]; then
 fi
 
 # pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  #pyenv init - &> /dev/null
-  eval "$(pyenv init -)" &> /dev/null
-fi
+# TODO: remove this
+#if command -v pyenv 1>/dev/null 2>&1; then
+#  export PYENV_ROOT="$HOME/.pyenv"
+#  #pyenv init - &> /dev/null
+#  eval "$(pyenv init -)" &> /dev/null
+#fi
 
 if command -v pipenv 1>/dev/null 2>&1; then
   eval "$(pipenv --completion)"
@@ -254,3 +254,7 @@ if [ -e "${HOME}/.bashrc_local" ]; then
   source "${HOME}/.bashrc_local"
 fi
 
+# 単語ごとに移動する key binding
+# Ref: https://superuser.com/questions/547130/bash-readline-for-move-forward-by-whitespace-delimited-word/1023236
+bind '"\C-f":vi-fWord'
+bind '"\C-b":vi-bWord'
