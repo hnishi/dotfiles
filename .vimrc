@@ -289,7 +289,7 @@ let g:sonictemplate_vim_template_dir = ['~/.vim/template']
 " ferrine/md-img-paste.vim
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 " there are some defaults for image directory and image name, you can change them
-let g:mdip_imgdir = 'image'
+let g:mdip_imgdir = 'images'
 let g:mdip_imgname = 'image'
 
 " junegunn/vim-emoji
