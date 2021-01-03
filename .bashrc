@@ -256,3 +256,7 @@ fi
 # Ref: https://superuser.com/questions/547130/bash-readline-for-move-forward-by-whitespace-delimited-word/1023236
 bind '"\C-f":vi-fWord'
 bind '"\C-b":vi-bWord'
+
+# Go
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
