@@ -35,5 +35,5 @@
 
 # ref: https://github.com/APIDevTools/swagger-parser/blob/master/.gitattributes
 
-*       eol=lf
-*.bat   eol=crlf
+#*       eol=lf
+#*.bat   eol=crlf
