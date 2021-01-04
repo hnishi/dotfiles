@@ -2,6 +2,14 @@
 
 I aim to make my dotfiles simple, minimal, and dependent only on bash.
 
+## For your personal use
+
+To get started with this repository as a template of your dotfiles, you may use the tag version of [minimal-template-v0](https://github.com/hnishi/dotfiles/tree/minimal-template-v0) .
+
+You can download a zip file from [Release page](https://github.com/hnishi/dotfiles/releases/tag/minimal-template-v0) .
+
+The master branch includes my personal cofiguration; e.g. github user name.
+
 ## Requirements
 
 - bash
