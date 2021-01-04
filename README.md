@@ -2,6 +2,11 @@
 
 I aim to make my dotfiles simple, minimal, and dependent only on bash.
 
+Also see the following materials (only in Japanese).
+
+- [bashとcurlで実現する初めてのdotfiles - Qiita](https://qiita.com/hnishi/items/28ad11df1dde8b0ed368)
+- [Slides](https://hnishi.github.io/slides-dotfiles/#/) (or its source: [GitHub - hnishi/slides-dotfiles: 勉強会資料](https://github.com/hnishi/slides-dotfiles) )
+
 ## For your personal use
 
 To get started with this repository as a template of your dotfiles, you may use the tag version of [minimal-template-v0](https://github.com/hnishi/dotfiles/tree/minimal-template-v0) .
