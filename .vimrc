@@ -151,7 +151,7 @@ set modifiable
 set fileencoding=utf-8 fileformat=unix
 
 " ファイル保存時に、不要な行末スペースを自動で削除
-autocmd BufWritePre * :%s/\s\+$//ge
+"autocmd BufWritePre * :%s/\s\+$//ge
 
 " tag jump
 " https://qiita.com/crarrry/items/3887b084267d60d3c42f

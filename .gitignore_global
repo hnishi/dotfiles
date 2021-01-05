@@ -6,6 +6,7 @@
 tags
 .tags
 zzz*
+old*
 .python-version
 .ipynb_checkpoints/
 .tool-versions
@@ -17,4 +18,15 @@ hnishi_*
 *csv
 *xls
 *xlsx
-
+*.patch
+*.diff
+*.orig
+*.keep
+*.old
+*_old*
+*_keep*
+*_orig*
+gomi/
+out_*
+err_*
+*.pstats

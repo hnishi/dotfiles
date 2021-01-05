@@ -14,3 +14,5 @@
 	patternType = extended
 [init]
 	templatedir = ~/.git_template
+[merge]
+	tool = vimdiff
