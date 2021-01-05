@@ -125,6 +125,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'ferrine/md-img-paste.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'mattn/emmet-vim'
+Plug 'tyru/eskk.vim'
 call plug#end()
 " `:PlugInstall` to install plugins
 
@@ -303,3 +304,12 @@ nnoremap <Leader>3 ciw[<C-r>"]()<Esc>
 vnoremap <Leader>3 c[<C-r>"]()<Esc>
 nnoremap <Leader>4 ciw[<C-r>"](<Esc>"*pa)<Esc>
 vnoremap <Leader>4 c[<C-r>"](<Esc>"*pa)<Esc>
+
+" eskk
+" https://alwei.hatenadiary.org/entry/20111029/1319905783
+let g:eskk#directory = "~/.eskk"
+let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
+let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
+let g:eskk#enable_completion = 1
+set imdisable
+
