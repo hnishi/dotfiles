@@ -267,6 +267,6 @@ export PATH=$PATH:$GOPATH/bin
 function mv_backup_dir {
   now=$(date "+%Y%m%d%H%M%S")
   backup_dir=${1}_backup${now}
-  echo mv $1 $backup_dir
-  mv $1 $backup_dir
+  echo mv "$1" "$backup_dir"
+  mv "$1" "$backup_dir"
 }
