@@ -252,6 +252,10 @@ set scrolloff=999
 
 " completion by tab in insert-mode
 inoremap <Tab> <C-p>
+" insert tab character when expandtab option is on in Vim
+" Ref: https://stackoverflow.com/questions/4781070/how-to-insert-tab-character-when-expandtab-option-is-on-in-vim
+" Also, as noted by @feedbackloop, on Windows you may need to press <CTRL-Q> rather than <CTRL-V>.
+inoremap <S-Tab> <C-V><Tab>
 
 " https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
 " Enter key for adding a new line without entering insert mode
@@ -303,3 +307,15 @@ nnoremap <Leader>3 ciw[<C-r>"]()<Esc>
 vnoremap <Leader>3 c[<C-r>"]()<Esc>
 nnoremap <Leader>4 ciw[<C-r>"](<Esc>"*pa)<Esc>
 vnoremap <Leader>4 c[<C-r>"](<Esc>"*pa)<Esc>
+
+" x で消した文字はレジスタに登録しない
+" Ref: https://twitter.com/yutakatay/status/1334995902184869889
+noremap x "_x
+
+" search and highlight but do not jump
+" Ref: https://stackoverflow.com/questions/4256697/vim-search-and-highlight-but-do-not-jump
+nnoremap <Space><Space> *``
+
+" insert mode で改行した時に undo の区切りにする
+" Ref: http://haya14busa.com/vim-break-undo-sequence-in-insertmode/
+inoremap <CR> <C-g>u<CR>
