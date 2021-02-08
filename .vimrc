@@ -252,6 +252,10 @@ set scrolloff=999
 
 " completion by tab in insert-mode
 inoremap <Tab> <C-p>
+" insert tab character when expandtab option is on in Vim
+" Ref: https://stackoverflow.com/questions/4781070/how-to-insert-tab-character-when-expandtab-option-is-on-in-vim
+" Also, as noted by @feedbackloop, on Windows you may need to press <CTRL-Q> rather than <CTRL-V>.
+inoremap <S-Tab> <C-V><Tab>
 
 " https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
 " Enter key for adding a new line without entering insert mode
