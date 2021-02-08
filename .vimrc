@@ -303,3 +303,15 @@ nnoremap <Leader>3 ciw[<C-r>"]()<Esc>
 vnoremap <Leader>3 c[<C-r>"]()<Esc>
 nnoremap <Leader>4 ciw[<C-r>"](<Esc>"*pa)<Esc>
 vnoremap <Leader>4 c[<C-r>"](<Esc>"*pa)<Esc>
+
+" x で消した文字はレジスタに登録しない
+" Ref: https://twitter.com/yutakatay/status/1334995902184869889
+noremap x "_x
+
+" search and highlight but do not jump
+" Ref: https://stackoverflow.com/questions/4256697/vim-search-and-highlight-but-do-not-jump
+nnoremap <Space><Space> *``
+
+" insert mode で改行した時に undo の区切りにする
+" Ref: http://haya14busa.com/vim-break-undo-sequence-in-insertmode/
+inoremap <CR> <C-g>u<CR>
