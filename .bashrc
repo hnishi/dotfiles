@@ -261,6 +261,9 @@ bind '"\C-b":vi-bWord'
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
+# Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
+
 # Util functions
 
 ## backup dir
