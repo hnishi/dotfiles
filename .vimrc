@@ -125,6 +125,9 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'ferrine/md-img-paste.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'mattn/emmet-vim'
+Plug 'thinca/vim-quickrun'
+" required to elixir-ls
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 " `:PlugInstall` to install plugins
 
