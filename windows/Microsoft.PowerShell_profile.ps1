@@ -19,7 +19,8 @@ function global:PromptWriteErrorInfo() {
         "`e[31m(" + $global:GitPromptValues.LastExitCode + ") `e[0m"
     }
     else {
-        "`e[31m! `e[0m"
+        "$([char]27)[31m! $([char]27)[0m"
+# "`e[31m! `e[0m"
     }
 }
 
