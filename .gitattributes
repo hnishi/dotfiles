@@ -4,7 +4,7 @@
 
 # Normalize line endings for all files that git determines to be text.
 # https://git-scm.com/docs/gitattributes#gitattributes-Settostringvalueauto
-#* text=auto
+* text=false
 
 # Normalize line endings to LF on checkin, and do NOT convert to CRLF when checking-out on Windows.
 # https://git-scm.com/docs/gitattributes#gitattributes-Settostringvaluelf
