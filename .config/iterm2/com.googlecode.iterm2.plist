@@ -18,8 +18,16 @@
 	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>63583A16-71F1-4EA6-A58B-EBD44EF8076E</string>
+	<key>EnableDivisionView</key>
+	<true/>
+	<key>FlashTabBarInFullscreen</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideActivityIndicator</key>
+	<true/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LoadPrefsFromCustomFolder</key>
@@ -75,8 +83,10 @@
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>496 486 799 448 0 0 1792 1097 </string>
+	<key>NSWindow Frame ProfilesPanel</key>
+	<string>2115 -838 735 382 1792 -1220 1600 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>262 191 1110 696 0 0 1792 1097 </string>
+	<string>2005 -1016 1125 673 1792 -1220 1600 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>228 115 1110 652 0 0 1792 1097 </string>
 	<key>New Bookmarks</key>
@@ -643,6 +653,8 @@
 			<false/>
 			<key>Shortcut</key>
 			<string></string>
+			<key>Show Mark Indicators</key>
+			<true/>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Sync Title</key>
@@ -903,7 +915,7 @@
 			<key>Guid</key>
 			<string>63583A16-71F1-4EA6-A58B-EBD44EF8076E</string>
 			<key>Horizontal Spacing</key>
-			<integer>1</integer>
+			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Jobs to Ignore</key>
@@ -1246,6 +1258,8 @@
 			<false/>
 			<key>Shortcut</key>
 			<string></string>
+			<key>Show Mark Indicators</key>
+			<true/>
 			<key>Show Status Bar</key>
 			<true/>
 			<key>Silence Bell</key>
@@ -1468,7 +1482,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<integer>1</integer>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -1484,14 +1498,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1536, 960}}</string>
+		<string>{{1792, -1220}, {1600, 900}}</string>
 		<key>topLeft</key>
-		<string>{128, 595}</string>
+		<string>{2092, -457}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>17315F03-867F-4970-9D22-67650D8CDC66</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>28</integer>
+	<integer>50</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2225,6 +2239,8 @@
 	<real>625154964.59298694</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
+	<key>PerPaneBackgroundImage</key>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -2274,10 +2290,28 @@
 	<true/>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<true/>
+	<key>ShowNewOutputIndicator</key>
+	<true/>
+	<key>ShowPaneTitles</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>StatusBarPosition</key>
+	<integer>1</integer>
+	<key>StretchTabsToFillBar</key>
+	<false/>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>4</integer>
+	<key>TabViewType</key>
+	<integer>0</integer>
+	<key>TabsHaveCloseButton</key>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>WindowNumber</key>
+	<true/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
