@@ -13,6 +13,7 @@ old*
 .venv/
 hnishi_*/
 hnishi_*
+hnishi*
 *gz
 *crt
 *csv
