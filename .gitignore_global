@@ -5,7 +5,7 @@
 *.swp
 tags
 .tags
-zzz*
+*zzz*
 old*
 .python-version
 .ipynb_checkpoints/
