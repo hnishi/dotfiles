@@ -86,7 +86,7 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>2115 -838 735 382 1792 -1220 1600 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2005 -1016 1125 673 1792 -1220 1600 877 </string>
+	<string>2103 -1009 1125 673 1792 -1162 1600 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>228 115 1110 652 0 0 1792 1097 </string>
 	<key>New Bookmarks</key>
@@ -1498,14 +1498,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{1792, -1220}, {1600, 900}}</string>
+		<string>{{1792, -1162}, {1600, 900}}</string>
 		<key>topLeft</key>
-		<string>{2092, -457}</string>
+		<string>{1904, -559}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>17315F03-867F-4970-9D22-67650D8CDC66</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>50</integer>
+	<integer>60</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2237,6 +2237,42 @@
 	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>625154964.59298694</real>
+	<key>NoSyncToolbeltProportions</key>
+	<dict>
+		<key>proportions</key>
+		<array>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.19938176197836166</real>
+				<key>name</key>
+				<string>Paste History</string>
+			</dict>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.19938176197836166</real>
+				<key>name</key>
+				<string>Jobs</string>
+			</dict>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.20015455950540958</real>
+				<key>name</key>
+				<string>Captured Output</string>
+			</dict>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.20015455950540958</real>
+				<key>name</key>
+				<string>Actions</string>
+			</dict>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.20092735703245751</real>
+				<key>name</key>
+				<string>Command History</string>
+			</dict>
+		</array>
+	</dict>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PerPaneBackgroundImage</key>
@@ -2308,6 +2344,11 @@
 	<integer>0</integer>
 	<key>TabsHaveCloseButton</key>
 	<true/>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Paste History</string>
+		<string>Jobs</string>
+	</array>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
