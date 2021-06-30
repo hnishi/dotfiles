@@ -33,13 +33,15 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~</string>
+	<string>~/Downloads</string>
 	<key>NSNavLastUserSetHideExtensionButtonState</key>
 	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedStateForSaveMode</key>
+	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -82,11 +84,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>496 486 799 448 0 0 1792 1097 </string>
+	<string>2171 -929 841 470 1792 -1162 1600 877 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>2115 -838 735 382 1792 -1220 1600 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2103 -1009 1125 673 1792 -1162 1600 877 </string>
+	<string>2043 -1088 1276 673 1792 -1162 1600 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>228 115 1110 652 0 0 1792 1097 </string>
 	<key>New Bookmarks</key>
@@ -1261,7 +1263,7 @@
 			<key>Show Mark Indicators</key>
 			<true/>
 			<key>Show Status Bar</key>
-			<true/>
+			<false/>
 			<key>Silence Bell</key>
 			<true/>
 			<key>Status Bar Layout</key>
@@ -1291,7 +1293,7 @@
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
-									<integer>1</integer>
+									<real>1</real>
 									<key>Blue Component</key>
 									<real>0.63</real>
 									<key>Color Space</key>
@@ -1327,7 +1329,7 @@
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
-									<integer>1</integer>
+									<real>1</real>
 									<key>Blue Component</key>
 									<real>0.63</real>
 									<key>Color Space</key>
@@ -1363,7 +1365,7 @@
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
-									<integer>1</integer>
+									<real>1</real>
 									<key>Blue Component</key>
 									<real>0.82710000000000006</real>
 									<key>Color Space</key>
@@ -1403,7 +1405,7 @@
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
-									<integer>1</integer>
+									<real>1</real>
 									<key>Blue Component</key>
 									<real>0.90000000000000002</real>
 									<key>Color Space</key>
@@ -1441,7 +1443,7 @@
 								<key>shared text color</key>
 								<dict>
 									<key>Alpha Component</key>
-									<integer>1</integer>
+									<real>1</real>
 									<key>Blue Component</key>
 									<real>0.77580000000000005</real>
 									<key>Color Space</key>
@@ -1457,7 +1459,9 @@
 								<key>algorithm</key>
 								<integer>0</integer>
 								<key>auto-rainbow style</key>
-								<integer>0</integer>
+								<integer>3</integer>
+								<key>font</key>
+								<string>.AppleSystemUIFont 12</string>
 							</dict>
 						</dict>
 					</dict>
@@ -1500,7 +1504,7 @@
 		<key>screenFrame</key>
 		<string>{{1792, -1162}, {1600, 900}}</string>
 		<key>topLeft</key>
-		<string>{1904, -559}</string>
+		<string>{1917, -383}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>17315F03-867F-4970-9D22-67650D8CDC66</string>
@@ -2233,7 +2237,7 @@
 	<key>NoSyncSavePanelSavedSettings_SaveProfile</key>
 	<dict>
 		<key>Initial Directory</key>
-		<string>/Users/Hiroshi.Nishigami</string>
+		<string>/Users/Hiroshi.Nishigami/Downloads</string>
 	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>625154964.59298694</real>
@@ -2344,11 +2348,15 @@
 	<integer>0</integer>
 	<key>TabsHaveCloseButton</key>
 	<true/>
+	<key>TmuxUsesDedicatedProfile</key>
+	<true/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Paste History</string>
 		<string>Jobs</string>
 	</array>
+	<key>UseTmuxStatusBar</key>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>

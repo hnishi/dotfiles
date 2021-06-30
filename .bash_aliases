@@ -41,3 +41,11 @@ function cheat() {
   curl https://cheat.sh/"$1" 
 }
 
+# docker
+# 全コンテナ停止: docker stop $(docker ps -q)
+alias docker_stop_all="docker stop $(docker ps -q)"
+# 全コンテナ削除: docker rm $(docker ps -q -a)
+alias docker_rm_all="docker rm $(docker ps -q -a)"
+# 全イメージ削除: docker rmi $(docker images -q)
+alias docker_rmi_all="docker rmi $(docker images -q)"
+# docker image prune -a --force --filter "until=2021-05-01T00:00:00"
