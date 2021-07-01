@@ -22,17 +22,31 @@ The master branch includes my personal cofiguration; e.g. github user name.
 
 ## How to install
 
-```
+### Mac/Linux
+
+```shell
 curl -L raw.githubusercontent.com/hnishi/dotfiles/master/scripts/download.sh | bash
 ```
 
 or
 
-```
+```shell
 git clone https://github.com/hnishi/dotfiles.git
 cd dotfiles/scripts
 bash install.sh
 ```
+
+### Windows
+
+For powershell,
+
+```powershell
+. .\scripts\install.ps1
+```
+
+> On Windows, script execution policy must be set to either RemoteSigned or Unrestricted. Check the script execution policy setting by executing Get-ExecutionPolicy. If the policy is not set to one of the two required values, run PowerShell as Administrator and execute `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm`.
+
+Ref: https://github.com/dahlbyk/posh-git#prerequisites
 
 ## References
 
