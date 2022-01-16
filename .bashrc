@@ -228,8 +228,14 @@ fi
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
-  #pyenv init - &> /dev/null
-  eval "$(pyenv init -)" &> /dev/null
+  #eval "$(pyenv init -)" &> /dev/null
+  # NOTE:
+  # 下記 brew install のタイミングにて、上記では pyenv が正常に setup できなくなったため変更
+  #
+  # $ HOMEBREW_NO_ENV_FILTERING=1 ACCEPT_EULA=Y brew install msodbcsql17
+  #
+  # ref: https://github.com/pyenv/pyenv/issues/849#issuecomment-875875617
+  eval "$(pyenv init --path)"
 fi
 
 # pipenv
