@@ -1,5 +1,3 @@
-
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
   # include .bashrc if it exists
@@ -14,3 +12,11 @@ fi
 #   screen -xRR z_default_session
 #fi
 
+# pyenv
+# See https://github.com/pyenv/pyenv#basic-github-checkout
+if command -v pyenv 1>/dev/null 2>&1; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
+  if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi
+fi

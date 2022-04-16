@@ -225,19 +225,6 @@ elif [[ $platform == 'freebsd' ]]; then
   source "${HOME}/.bashrc_mac"
 fi
 
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  #eval "$(pyenv init -)" &> /dev/null
-  # NOTE:
-  # 下記 brew install のタイミングにて、上記では pyenv が正常に setup できなくなったため変更
-  #
-  # $ HOMEBREW_NO_ENV_FILTERING=1 ACCEPT_EULA=Y brew install msodbcsql17
-  #
-  # ref: https://github.com/pyenv/pyenv/issues/849#issuecomment-875875617
-  eval "$(pyenv init --path)"
-fi
-
 # pipenv
 if command -v pipenv 1>/dev/null 2>&1; then
   eval "$(pipenv --completion)"
