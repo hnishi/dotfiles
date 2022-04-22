@@ -5,7 +5,7 @@
 *.swp
 tags
 .tags
-zzz*
+*zzz*
 old*
 .python-version
 .ipynb_checkpoints/
@@ -13,6 +13,7 @@ old*
 .venv/
 hnishi_*/
 hnishi_*
+hnishi*
 *gz
 *crt
 *csv

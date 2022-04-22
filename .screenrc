@@ -45,4 +45,3 @@ deflog on #automatic log --> on
 
 # In docker image of ubuntu:18.04, screen use sh as default shell
 defshell -bash      # dash makes it a login shell
-

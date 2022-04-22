@@ -16,3 +16,6 @@
 	templatedir = ~/.git_template
 [merge]
 	tool = vimdiff
+[diff]
+	algorithm = histogram
+	colorMoved = dimmed-zebra

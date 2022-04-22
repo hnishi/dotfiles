@@ -225,13 +225,6 @@ elif [[ $platform == 'freebsd' ]]; then
   source "${HOME}/.bashrc_mac"
 fi
 
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  #pyenv init - &> /dev/null
-  eval "$(pyenv init -)" &> /dev/null
-fi
-
 # pipenv
 if command -v pipenv 1>/dev/null 2>&1; then
   eval "$(pipenv --completion)"
