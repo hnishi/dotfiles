@@ -31,7 +31,8 @@ curl -L raw.githubusercontent.com/hnishi/dotfiles/master/scripts/download.sh | b
 or
 
 ```shell
-git clone https://github.com/hnishi/dotfiles.git
+cd ~
+git clone https://github.com/hnishi/dotfiles.git .dotfiles
 cd dotfiles/scripts
 bash install.sh
 ```
