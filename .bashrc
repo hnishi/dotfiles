@@ -256,6 +256,12 @@ export PATH=$PATH:$GOPATH/bin
 
 # Poetry
 export PATH="$HOME/.poetry/bin:$PATH"
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
+# Pipenv
+# `$ brew install pipenv`
+# https://pipenv.pypa.io/en/latest/advanced/#pipenv.environments.PIPENV_VENV_IN_PROJECT
+export PIPENV_VENV_IN_PROJECT=true
 
 # Util functions
 
