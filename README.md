@@ -33,7 +33,7 @@ or
 ```shell
 cd ~
 git clone https://github.com/hnishi/dotfiles.git .dotfiles
-cd dotfiles/scripts
+cd .dotfiles/scripts
 bash install.sh
 ```
 
