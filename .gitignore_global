@@ -9,8 +9,8 @@ tags
 old*
 .python-version
 .ipynb_checkpoints/
-.tool-versions
 .venv/
+venv/
 hnishi_*/
 hnishi_*
 hnishi*
