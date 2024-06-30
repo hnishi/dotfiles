@@ -31,3 +31,4 @@ gomi/
 out_*
 err_*
 *.pstats
+.tool-versions
